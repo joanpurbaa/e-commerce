@@ -2,6 +2,7 @@
   <main>
     <div></div>
     <img src="assets/icon/logo.svg" alt="">
-    <div class="loader"></div>
+    <div class="loader" *ngIf="loader"></div>
+    <div class="loader2" *ngIf="!loader"></div>
   </main>
 </ion-content>
