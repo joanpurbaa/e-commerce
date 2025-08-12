@@ -37,7 +37,7 @@
         </div>
 
         <div class="button-section">
-          <button [disabled]="!verificationForm.valid"
+          <button [routerLink]="['/reset-password']" [disabled]="!verificationForm.valid"
             [ngClass]="verificationForm.valid ? 'button-enabled' : 'button-disabled'" type="submit">
             Continue
           </button>

@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'verification',
     loadChildren: () => import('./verification/verification.module').then( m => m.VerificationPageModule)
   },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
 ];
 
 @NgModule({

@@ -58,7 +58,7 @@
               <path d="m9 12 2 2 4-4" />
             </svg>
           </div>
-          <p class="agreementText">Forgot your password? <u>Reset your password</u>
+          <p class="agreementText">Forgot your password? <u [routerLink]="['/forgot-password']">Reset your password</u>
           </p>
         </li>
         <li>
@@ -83,7 +83,7 @@
       </ul>
     </form>
     <footer>
-      <p>Already have an account? <u><b>Log In</b></u></p>
+      <p>Don't have an account? <u [routerLink]="['/signup']"><b>Join</b></u></p>
     </footer>
   </main>
 </ion-content>
