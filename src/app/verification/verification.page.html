@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/forgot-password"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ionContent" [fullscreen]="true" fullscreen>
+  <main>
+    <form [formGroup]="verificationForm" (ngSubmit)="onSubmit()" action="">
+      <h1 class="title">Enter 4 Digit Code</h1>
+      <p>Enter 4 digit code that you receive on your email <span
+          style="color: black; font-weight: 500;">(cody.fisher45@example.com)</span></p>
+
+      <div class="form-body">
+        <div class="input-section">
+          <div class="code-input-container">
+            <div class="code-inputs">
+              <input #input0 type="text" maxlength="1" class="code-input" formControlName="digit1"
+                (input)="onDigitInput($event, 0)" (keydown)="onKeyDown($event, 0)" (paste)="onPaste($event)">
+              <input #input1 type="text" maxlength="1" class="code-input" formControlName="digit2"
+                (input)="onDigitInput($event, 1)" (keydown)="onKeyDown($event, 1)">
+              <input #input2 type="text" maxlength="1" class="code-input" formControlName="digit3"
+                (input)="onDigitInput($event, 2)" (keydown)="onKeyDown($event, 2)">
+              <input #input3 type="text" maxlength="1" class="code-input" formControlName="digit4"
+                (input)="onDigitInput($event, 3)" (keydown)="onKeyDown($event, 3)">
+            </div>
+          </div>
+
+          <div class="resend-section">
+            <p class="resend-text">
+              Email not received?
+              <span class="resend-link" (click)="resendCode()">Resend code</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="button-section">
+          <button [disabled]="!verificationForm.valid"
+            [ngClass]="verificationForm.valid ? 'button-enabled' : 'button-disabled'" type="submit">
+            Continue
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+</ion-content>
