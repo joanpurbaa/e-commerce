@@ -41,7 +41,7 @@ ion-footer {
   padding: 20px;
 }
 
-button {
+a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +50,7 @@ button {
   height: 50px;
   background: var(--primary);
   color: white;
+  text-decoration: none;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -57,6 +58,6 @@ button {
   -o-border-radius: 10px;
 }
 
-button p {
+a p {
   font-size: 1rem;
 }

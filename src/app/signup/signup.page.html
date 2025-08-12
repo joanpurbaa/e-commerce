@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true">
+  <main>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" action="">
+      <h1 class="title">Create an account</h1>
+      <p>Let's create your account.</p>
+      <ul>
+        <li>
+          <label for="">Full name</label>
+          <div class="inputWrapper"
+            [ngStyle]="registerForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}">
+            <input formControlName="fullname" type="text" placeholder="Enter your full name">
+            <svg *ngIf="registerForm.valid" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <label for="">Email</label>
+          <div class="inputWrapper"
+            [ngStyle]="registerForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}"
+            [ngStyle]="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email'] ? {'border': '1px solid red'} : {'border': '1px solid #ccc'}">
+            <input formControlName="email" type="email" placeholder="Enter your email adress">
+            <svg *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-circle-alert-icon lucide-circle-alert">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" x2="12" y1="8" y2="12" />
+              <line x1="12" x2="12.01" y1="16" y2="16" />
+            </svg>
+            <svg *ngIf="registerForm.valid" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <p class="emailError"
+            *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">Please enter
+            valid email address</p>
+        </li>
+        <li>
+          <label for="">Password</label>
+          <div class="inputWrapper"
+            [ngStyle]="registerForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}">
+            <input formControlName="password" [type]="showPassword ? 'text' : 'password'"
+              placeholder="Enter your password">
+            <svg *ngIf="!showPassword" (click)="showPasswordStatus()" xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off">
+              <path
+                d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+              <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+              <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+              <path d="m2 2 20 20" />
+            </svg>
+            <svg *ngIf="showPassword" (click)="showPasswordStatus()" xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye">
+              <path
+                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <svg *ngIf="registerForm.valid" style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <p class="agreementText">By signing up you agree to our <u><b>Teams</b></u>, <u><b>Privacy Policy</b></u>, and
+            <u><b>Cookie Use</b></u>
+          </p>
+        </li>
+        <li>
+          <button [disabled]="!registerForm.valid" [ngClass]="registerForm.valid ? 'button-enabled' : 'button-disabled'"
+            type="submit">Create an account</button>
+        </li>
+        <li>
+          <div class="orSection">
+            <span class="orText">Or</span>
+          </div>
+        </li>
+        <li>
+          <button>
+            <img src="assets/icon/google.svg" alt="">
+            <p>Sign Up with Google</p>
+          </button>
+          <button>
+            <img src="assets/icon/facebook.svg" alt="">
+            <p>Sign Up with Facebook</p>
+          </button>
+        </li>
+      </ul>
+    </form>
+    <footer>
+      <p>Already have an account? <u><b>Log In</b></u></p>
+    </footer>
+  </main>
+</ion-content>
