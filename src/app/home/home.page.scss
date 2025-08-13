@@ -36,6 +36,16 @@ main svg {
   color: var(--primary);
 }
 
+.headerIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--primary);
+}
+
+ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
 .searchWrapper {
   display: grid;
   grid-template-columns: 1fr auto;

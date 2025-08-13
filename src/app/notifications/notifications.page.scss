@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-header {
+  --box-shadow: none;
+  box-shadow: none;
+}
+
+.toolbar {
+  --background: white;
+  --color: var(--primary);
+  --box-shadow: none;
+  border-bottom: none;
+  padding: 20px;
+}
+
+ion-title {
+  font-size: 1.5rem;
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.headerIcon {
+  width: 30px;
+  height: 30px;
+}
+
+ion-content {
+  --overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  padding: 0 20px;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeLabel {
+  font-weight: bold;
+}
+
+.labelSection {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.labelCard {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.labelCard svg {
+  fill: #ccc;
+}
+
+.labelCard p:first-child {
+  font-weight: bold;
+}
+
+.labelCard p:last-child {
+  color: #949494;
+}

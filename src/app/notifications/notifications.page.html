@@ -1,0 +1,79 @@
+<app-top-header title="Notifications" (rightIconClick)="onNotificationClick()">
+</app-top-header>
+
+<ion-content>
+  <main>
+    <div class="labelSection">
+      <h3 class="timeLabel">Today</h3>
+      <div class="labelCard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-tag-icon lucide-tag">
+          <path
+            d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+          <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
+        </svg>
+        <div>
+          <p>30% Special Discount!</p>
+          <p>Special promotion only valid today</p>
+        </div>
+      </div>
+    </div>
+    <div class="labelSection">
+      <h3 class="timeLabel">Yesterday</h3>
+      <div class="labelCard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet">
+          <path
+            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+        </svg>
+        <div>
+          <p>Top up E-Wallet Successfully!</p>
+          <p>You have top up your e-waller</p>
+        </div>
+      </div>
+      <div class="labelCard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin">
+          <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <div>
+          <p>New Service Available!</p>
+          <p>Now you can track order in real-time</p>
+        </div>
+      </div>
+    </div>
+    <div class="labelSection">
+      <h3 class="timeLabel">June 7, 2023</h3>
+      <div class="labelCard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-credit-card-icon lucide-credit-card">
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+          <line x1="2" x2="22" y1="10" y2="10" />
+        </svg>
+        <div>
+          <p>Credit Card Connected!</p>
+          <p>Credit card has been linked</p>
+        </div>
+      </div>
+      <div class="labelCard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-circle-user-icon lucide-circle-user">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="10" r="3" />
+          <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+        </svg>
+        <div>
+          <p>Account Setup Successfully!</p>
+          <p>Your account has been created</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</ion-content>
+
+<app-bottom-tab-bar></app-bottom-tab-bar>

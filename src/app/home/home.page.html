@@ -2,13 +2,8 @@
   <main>
     <header>
       <h1 class="title">Discover</h1>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-bell-icon lucide-bell">
-        <path d="M10.268 21a2 2 0 0 0 3.464 0" />
-        <path
-          d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
-      </svg>
+      <ion-icon class="headerIcon" name="notifications-outline" (click)="goToNotification()">
+      </ion-icon>
     </header>
     <section class="searchWrapper">
       <div class="searchBar">
@@ -86,27 +81,4 @@
   </main>
 </ion-content>
 
-<ion-footer>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="search">
-      <ion-icon name="search-outline"></ion-icon>
-      <ion-label>Search</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <ion-icon name="heart-outline"></ion-icon>
-      <ion-label>Saved</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <ion-icon name="cart-outline"></ion-icon>
-      <ion-label>Cart</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <ion-icon name="person-outline"></ion-icon>
-      <ion-label>Account</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-footer>
+<app-bottom-tab-bar></app-bottom-tab-bar>
