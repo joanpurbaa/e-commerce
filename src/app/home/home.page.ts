@@ -13,4 +13,8 @@ export class HomePage {
   goToNotification() {
     this.router.navigate(['/notifications']);
   }
+
+  goToSearch() {
+    this.router.navigate(['/search']);
+  }
 }
