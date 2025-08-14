@@ -9,7 +9,5 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPage {
   constructor() {}
 
-  onNotificationClick() {
-    console.log(true);
-  }
+  onNotificationClick() {}
 }

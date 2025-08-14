@@ -1,58 +1,92 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './shared/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./home/home.module').then((m) => m.HomePageModule),
+      },
+      {
+        path: 'search',
+        loadChildren: () =>
+          import('./search/search.module').then((m) => m.SearchPageModule),
+      },
+      {
+        path: 'saved',
+        loadChildren: () =>
+          import('./saved-items/saved-items.module').then(
+            (m) => m.SavedItemsPageModule
+          ),
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: 'splash-screen',
-    loadChildren: () => import('./splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
+    loadChildren: () =>
+      import('./splash-screen/splash-screen.module').then(
+        (m) => m.SplashScreenPageModule
+      ),
   },
   {
     path: 'landing',
-    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
+    loadChildren: () =>
+      import('./landing/landing.module').then((m) => m.LandingPageModule),
   },
   {
     path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () =>
+      import('./signup/signup.module').then((m) => m.SignupPageModule),
   },
   {
     path: 'signin',
-    loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+    loadChildren: () =>
+      import('./signin/signin.module').then((m) => m.SigninPageModule),
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () =>
+      import('./forgot-password/forgot-password.module').then(
+        (m) => m.ForgotPasswordPageModule
+      ),
   },
   {
     path: 'verification',
-    loadChildren: () => import('./verification/verification.module').then( m => m.VerificationPageModule)
+    loadChildren: () =>
+      import('./verification/verification.module').then(
+        (m) => m.VerificationPageModule
+      ),
   },
   {
     path: 'reset-password',
-    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
-  },  {
-    path: 'notifications',
-    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+    loadChildren: () =>
+      import('./reset-password/reset-password.module').then(
+        (m) => m.ResetPasswordPageModule
+      ),
   },
   {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    path: 'notifications',
+    loadChildren: () =>
+      import('./notifications/notifications.module').then(
+        (m) => m.NotificationsPageModule
+      ),
   },
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
