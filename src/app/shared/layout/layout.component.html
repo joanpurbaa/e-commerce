@@ -1,8 +1,28 @@
+<div *ngIf="showTopHeader">
+  <ion-header [translucent]="true">
+    <ion-toolbar class="toolbar">
+      <div class="toolbar-content">
+        <ion-icon *ngIf="showBackButton" class="headerIcon" name="arrow-back-outline" (click)="onBackClick()">
+        </ion-icon>
+        <div *ngIf="!showBackButton" class="headerIcon"></div>
+
+        <ion-title style="text-align: center;">
+          <b>{{ title }}</b>
+        </ion-title>
+
+        <ion-icon *ngIf="showRightIcon" class="headerIcon" [name]="rightIconName" (click)="onRightIconClick()">
+        </ion-icon>
+        <div *ngIf="!showRightIcon" class="headerIcon"></div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+</div>
+
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
 
-<ion-footer>
+<ion-footer *ngIf="showBottomNav">
   <ion-tab-bar slot="bottom">
     <ion-tab-button (click)="navigateTo('/home')">
       <ion-icon name="home-outline"></ion-icon>

@@ -25,6 +25,18 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'notifications',
+        loadChildren: () =>
+          import('./notifications/notifications.module').then(
+            (m) => m.NotificationsPageModule
+          ),
+      },
+      {
+        path: 'details',
+        loadChildren: () =>
+          import('./details/details.module').then((m) => m.DetailsPageModule),
+      },
+      {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full',
@@ -72,13 +84,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./reset-password/reset-password.module').then(
         (m) => m.ResetPasswordPageModule
-      ),
-  },
-  {
-    path: 'notifications',
-    loadChildren: () =>
-      import('./notifications/notifications.module').then(
-        (m) => m.NotificationsPageModule
       ),
   },
 ];
