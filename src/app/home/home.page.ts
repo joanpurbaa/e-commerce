@@ -8,7 +8,13 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class HomePage {
+  presentingElement!: HTMLElement | null;
+
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.presentingElement = document.querySelector('.ion-page');
+  }
 
   goToNotification() {
     this.router.navigate(['/notifications']);
