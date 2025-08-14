@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+main {
+  padding: 0 20px;
+}
+
+section {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+section > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+}
+
+section > div:nth-child(1) > .rate {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+section > div:nth-child(1) > div > div {
+  display: flex;
+  gap: 10px;
+}
+
+section > div:nth-child(1) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section > div:nth-child(1) > div > h5 {
+  color: rgb(163, 163, 163);
+}
+
+section > div:nth-child(2) > div:nth-child(1) > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+section > div:nth-child(2) > div > div > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e5e5e5;
+  border-radius: 100px;
+}
+
+.progress-bar1 {
+  width: 80%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 100px;
+}
+
+.progress-bar2 {
+  width: 60%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 100px;
+}
+
+.progress-bar3 {
+  width: 40%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 100px;
+}
+
+.progress-bar4 {
+  width: 20%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 100px;
+}
+
+.progress-bar5 {
+  width: 10%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 100px;
+}
+
+section:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+section:nth-child(2) > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section:nth-child(2) > div:nth-child(1) > div:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.reviewsStars {
+  display: flex;
+  gap: 5px;
+}
+
+.reviewsDescription {
+  color: rgb(172, 172, 172);
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.reviewer > span {
+  color: rgb(172, 172, 172);
+}

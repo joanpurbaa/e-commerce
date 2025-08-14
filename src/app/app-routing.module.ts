@@ -37,6 +37,11 @@ const routes: Routes = [
           import('./details/details.module').then((m) => m.DetailsPageModule),
       },
       {
+        path: 'reviews',
+        loadChildren: () =>
+          import('./reviews/reviews.module').then((m) => m.ReviewsPageModule),
+      },
+      {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full',

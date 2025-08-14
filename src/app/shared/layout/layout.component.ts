@@ -71,6 +71,13 @@ export class LayoutComponent implements OnInit {
       this.showBackButton = true;
       this.showRightIcon = true;
       this.rightIconName = 'notifications-outline';
+    } else if (currentUrl === '/reviews') {
+      this.title = 'Reviews';
+      this.showTopHeader = true;
+      this.showBottomNav = false;
+      this.showBackButton = true;
+      this.showRightIcon = true;
+      this.rightIconName = 'notifications-outline';
     }
   }
 
