@@ -70,6 +70,13 @@ const routes: Routes = [
             (m) => m.NewAddressPageModule
           ),
       },
+      {
+        path: 'payment-method',
+        loadChildren: () =>
+          import('./payment-method/payment-method.module').then(
+            (m) => m.PaymentMethodPageModule
+          ),
+      },
     ],
   },
   {
