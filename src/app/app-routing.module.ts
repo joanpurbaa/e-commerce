@@ -58,6 +58,11 @@ const routes: Routes = [
             (m) => m.CheckoutPageModule
           ),
       },
+      {
+        path: 'address',
+        loadChildren: () =>
+          import('./address/address.module').then((m) => m.AddressPageModule),
+      },
     ],
   },
   {

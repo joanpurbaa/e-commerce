@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+form {
+  height: 100%;
+  color: var(--primary);
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper > section {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper > section:nth-child(1) > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper > section:nth-child(1) > .addressWrapper {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.wrapper > section:nth-child(1) > .addressWrapper > .address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper > section:nth-child(1) > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wrapper
+  > section:nth-child(1)
+  > .addressWrapper
+  > .address
+  > div
+  > p:last-child {
+  color: #a8a8a8;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper > section:nth-child(2) > .paymentMethod {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper > section:nth-child(2) > .paymentMethod > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.addAddressButton {
+  background: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.checkoutButton {
+  margin-top: 20px;
+  background: var(--primary);
+  font-size: 1rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
