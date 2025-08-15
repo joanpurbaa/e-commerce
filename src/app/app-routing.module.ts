@@ -63,6 +63,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./address/address.module').then((m) => m.AddressPageModule),
       },
+      {
+        path: 'new-address',
+        loadChildren: () =>
+          import('./new-address/new-address.module').then(
+            (m) => m.NewAddressPageModule
+          ),
+      },
     ],
   },
   {
