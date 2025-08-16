@@ -82,6 +82,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./new-card/new-card.module').then((m) => m.NewCardPageModule),
       },
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('./account/account.module').then((m) => m.AccountPageModule),
+      },
     ],
   },
   {

@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+main > section {
+  padding: 0 20px;
+  border-bottom: 10px solid #ececec;
+}
+
+main > section:last-child {
+  padding: 0 20px;
+  border-bottom: none;
+}
+
+main > section:first-child > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+
+main > section > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+main > section > div > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+}
+
+main > section:last-child > div > div {
+  color: red;
+}
+
+main > section > div > svg {
+  color: #ccc;
+}
