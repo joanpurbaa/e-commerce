@@ -77,6 +77,11 @@ const routes: Routes = [
             (m) => m.PaymentMethodPageModule
           ),
       },
+      {
+        path: 'new-card',
+        loadChildren: () =>
+          import('./new-card/new-card.module').then((m) => m.NewCardPageModule),
+      },
     ],
   },
   {
