@@ -101,6 +101,13 @@ const routes: Routes = [
             (m) => m.TrackOrderPageModule
           ),
       },
+      {
+        path: 'completed-order',
+        loadChildren: () =>
+          import('./completed-order/completed-order.module').then(
+            (m) => m.CompletedOrderPageModule
+          ),
+      },
     ],
   },
   {

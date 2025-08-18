@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+main {
+  padding: 20px;
+}
+
+.tabWrapper {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 5px;
+  background: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.tabWrapper > p:last-child {
+  text-align: center;
+  width: 100%;
+  background: white;
+  padding: 10px;
+  color: var(--primary);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.tabWrapper > p {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  color: var(--primary);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+section {
+  margin-top: 20px;
+  color: var(--primary);
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+section > img {
+  width: 100px;
+}
+
+section > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section > div > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+section > div > div:first-child > small {
+  background: rgb(186, 255, 186);
+  color: green;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+section > div > div:last-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+section > div > div:last-child > p:first-child {
+  font-weight: bold;
+}
+
+section > div > div:last-child > button {
+  color: white;
+  background: var(--primary);
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+ion-modal {
+  --background: transparent;
+}
+
+ion-modal::part(content) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: auto;
+  border-radius: 20px 20px 0 0;
+  background: white;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.modal-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary, #333);
+  margin: 0;
+}
+
+.close-btn {
+  --color: var(--primary, #333);
+  --padding-start: 0;
+  --padding-end: 0;
+  min-width: auto;
+  width: 32px;
+  height: 32px;
+}
+
+.modal-body {
+  padding: 15px 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+  color: var(--primary);
+}
+
+.modal-body > p:first-child {
+  font-weight: bold;
+}
+
+.modal-body > p:nth-child(2) {
+  color: #aaaaaa;
+}
+
+.modal-body > div {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin: 20px 0;
+}
+
+.modal-body > textarea {
+  width: 100%;
+  resize: none;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.apply-button {
+  width: 100%;
+  height: 44px;
+  background: var(--primary, #333);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 10px;
+}
+
+.apply-button:hover {
+  background: var(--primary-shade, #222);
+}
+
+ion-range {
+  --bar-background: #e0e0e0;
+  --bar-background-active: var(--primary, #333);
+  --knob-background: var(--primary, #333);
+  --knob-border: 2px solid white;
+  --knob-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --pin-background: var(--primary, #333);
+  --pin-color: white;
+  --bar-height: 3px;
+  --knob-size: 20px;
+  margin: 10px 0;
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideUpModal {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+ion-modal.modal-entering::part(content) {
+  animation: slideUpModal 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
