@@ -87,6 +87,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./account/account.module').then((m) => m.AccountPageModule),
       },
+      {
+        path: 'my-orders',
+        loadChildren: () =>
+          import('./my-orders/my-orders.module').then(
+            (m) => m.MyOrdersPageModule
+          ),
+      },
     ],
   },
   {
