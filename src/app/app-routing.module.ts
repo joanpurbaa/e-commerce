@@ -108,6 +108,13 @@ const routes: Routes = [
             (m) => m.CompletedOrderPageModule
           ),
       },
+      {
+        path: 'my-details',
+        loadChildren: () =>
+          import('./my-details/my-details.module').then(
+            (m) => m.MyDetailsPageModule
+          ),
+      },
     ],
   },
   {
