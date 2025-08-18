@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+main {
+  padding: 0 20px;
+  color: var(--primary);
+}
+
+main > section {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.toggleWrapper {
+  width: 50px;
+  height: 30px;
+  background: var(--primary);
+  padding: 5px;
+  display: flex;
+  justify-content: start;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.toggle {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}

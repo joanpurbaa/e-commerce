@@ -115,6 +115,13 @@ const routes: Routes = [
             (m) => m.MyDetailsPageModule
           ),
       },
+      {
+        path: 'notifications-setting',
+        loadChildren: () =>
+          import('./notifications-setting/notifications-setting.module').then(
+            (m) => m.NotificationsSettingPageModule
+          ),
+      },
     ],
   },
   {
