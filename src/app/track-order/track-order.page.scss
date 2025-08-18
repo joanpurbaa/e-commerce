@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  --background: white;
+}
+
+main {
+  color: var(--primary);
+}
+
+.addressWrapper {
+  padding: 0 20px 20px 20px;
+}
+
+.addressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+li:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+li:last-child > img {
+  width: 60px !important;
+  height: 60px !important;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+li:last-child > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child > div > div > p:first-child {
+  font-weight: bold;
+}
+
+li:last-child > div > div > p:last-child {
+  color: #b3b3b3;
+}
+
+li:last-child svg {
+  background: #ccc;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  fill: black;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}

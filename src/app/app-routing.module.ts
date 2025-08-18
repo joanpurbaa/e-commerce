@@ -94,6 +94,13 @@ const routes: Routes = [
             (m) => m.MyOrdersPageModule
           ),
       },
+      {
+        path: 'track-order',
+        loadChildren: () =>
+          import('./track-order/track-order.module').then(
+            (m) => m.TrackOrderPageModule
+          ),
+      },
     ],
   },
   {
