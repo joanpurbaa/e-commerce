@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class CheckoutPage implements OnInit {
+  successPopupStatus: boolean = false;
+
   constructor() {}
 
   ngOnInit() {}
+
+  setSuccessPopupStatus() {
+    this.successPopupStatus = !this.successPopupStatus;
+  }
 }
