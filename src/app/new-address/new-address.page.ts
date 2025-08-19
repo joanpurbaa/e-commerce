@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-address',
@@ -7,7 +8,24 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class NewAddressPage implements OnInit {
-  constructor() {}
+  newAddressForm!: FormGroup;
+  filledInputStatus: boolean = false;
 
-  ngOnInit() {}
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.newAddressForm = this.formBuilder.group({
+      addressNickname: ['', [Validators.required]],
+      fullAddress: ['', [Validators.required]],
+    });
+  }
+
+  onSubmit() {
+    if (this.newAddressForm.valid) {
+      console.log(this.newAddressForm.value);
+    } else {
+      console.log(this.newAddressForm.value);
+      console.log('data form tidak valid');
+    }
+  }
 }
