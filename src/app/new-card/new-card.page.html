@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-  <form action="">
+  <form [formGroup]="newCardForm" action="">
     <section class="wrapper">
       <div class="header">
         <p>
@@ -9,22 +9,37 @@
       <ul>
         <li>
           <label for="">Card Number</label>
-          <input type="text" placeholder="Enter your card number">
+          <input formControlName="cardNumber" type="text" placeholder="Enter your card number">
         </li>
         <li>
           <div>
             <label for="">Expiry Date</label>
-            <input type="text" placeholder="MM/YY">
+            <input formControlName="expiryDate" type="text" placeholder="MM/YY">
           </div>
           <div>
             <label for="">Security Code</label>
-            <input type="text" placeholder="CVC">
+            <input formControlName="securityCode" type="text" placeholder="CVC">
           </div>
         </li>
       </ul>
     </section>
-    <button class="checkoutButton">
+    <button (click)="setSuccessPopupStatus()" [disabled]="!newCardForm.valid"
+              [ngClass]="newCardForm.valid ? 'button-enabled' : 'button-disabled'" type="submit">
       <p>Apply</p>
     </button>
   </form>
 </ion-content>
+
+<section *ngIf="successPopupStatus" class="popupWrapper">
+  <div class="popup">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-circle-check-icon lucide-circle-check">
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+    <h3>Congratulations!</h3>
+    <p>Your new card has been added.</p>
+    <button [routerLink]="['/payment-method']">Thanks</button>
+  </div>
+</section>
