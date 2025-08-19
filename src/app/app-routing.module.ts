@@ -134,6 +134,13 @@ const routes: Routes = [
             (m) => m.HelpCenterPageModule
           ),
       },
+      {
+        path: 'customer-service',
+        loadChildren: () =>
+          import('./customer-service/customer-service.module').then(
+            (m) => m.CustomerServicePageModule
+          ),
+      },
     ],
   },
   {

@@ -176,6 +176,13 @@ export class LayoutComponent implements OnInit {
       this.showBackButton = true;
       this.showRightIcon = true;
       this.rightIconName = 'notifications-outline';
+    } else if (currentUrl === '/customer-service') {
+      this.title = 'Customer Service';
+      this.showTopHeader = true;
+      this.showBottomNav = true;
+      this.showBackButton = true;
+      this.showRightIcon = true;
+      this.rightIconName = 'notifications-outline';
     }
   }
 
