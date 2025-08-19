@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NewAddressPage implements OnInit {
   newAddressForm!: FormGroup;
   filledInputStatus: boolean = false;
+  successPopupStatus: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -27,5 +28,9 @@ export class NewAddressPage implements OnInit {
       console.log(this.newAddressForm.value);
       console.log('data form tidak valid');
     }
+  }
+
+  setSuccessPopupStatus() {
+    this.successPopupStatus = !this.successPopupStatus;
   }
 }
