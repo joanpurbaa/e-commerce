@@ -122,6 +122,11 @@ const routes: Routes = [
             (m) => m.NotificationsSettingPageModule
           ),
       },
+      {
+        path: 'faqs',
+        loadChildren: () =>
+          import('./faqs/faqs.module').then((m) => m.FaqsPageModule),
+      },
     ],
   },
   {
