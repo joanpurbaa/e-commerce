@@ -4,13 +4,16 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-account',
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class AccountPage implements OnInit {
+  logoutPopup: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  setLogoutPopup() {
+    this.logoutPopup = !this.logoutPopup;
   }
-
 }
