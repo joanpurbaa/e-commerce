@@ -127,6 +127,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./faqs/faqs.module').then((m) => m.FaqsPageModule),
       },
+      {
+        path: 'help-center',
+        loadChildren: () =>
+          import('./help-center/help-center.module').then(
+            (m) => m.HelpCenterPageModule
+          ),
+      },
     ],
   },
   {
