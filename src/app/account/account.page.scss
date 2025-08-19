@@ -8,56 +8,57 @@ ion-content {
   --background: white;
 }
 
-main > section {
-  padding: 0 20px;
-  border-bottom: 10px solid #ececec;
-}
+main {
+  > section {
+    padding: 0 20px;
+    border-bottom: 10px solid #ececec;
 
-main > section:last-child {
-  padding: 0 20px;
-  border-bottom: none;
-}
+    &:last-child {
+      padding: 0 20px;
+      border-bottom: none;
+      margin-top: 20px;
 
-main > section:first-child > div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  border-top: 1px solid #ccc;
-}
+      > button {
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: red;
+      }
+    }
 
-main > section > div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-}
+    &:first-child {
+      > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-top: 1px solid #ccc;
+      }
+    }
 
-main > section > div > div {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--primary);
-}
+    > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
 
-main > section:last-child {
-  margin-top: 20px;
-}
+      > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary);
+      }
+    }
+  }
 
-main > section:last-child > button {
-  background: transparent;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: red;
-}
-
-main svg {
-  width: 30px;
-  height: 30px;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .popupWrapper {
@@ -71,61 +72,61 @@ main svg {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.popup {
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-  background: white;
-  color: var(--primary);
-  padding: 20px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
+  .popup {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    background: white;
+    color: var(--primary);
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 
-.popup > svg {
-  color: red;
-  fill: rgb(255, 164, 164);
-  width: 80px;
-  height: 80px;
-}
+    > svg {
+      color: red;
+      fill: rgb(255, 164, 164);
+      width: 80px;
+      height: 80px;
+    }
 
-.popup > h3 {
-  font-weight: bold;
-}
+    > h3 {
+      font-weight: bold;
+    }
 
-.popup > p {
-  color: rgb(165, 165, 165);
-}
+    > p {
+      color: rgb(165, 165, 165);
+    }
 
-.popup > .yesButton {
-  width: 100%;
-  background: red;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+    > .yesButton {
+      width: 100%;
+      background: red;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
 
-.popup > .noButton {
-  width: 100%;
-  background: white;
-  border: 1px solid #ccc;
-  color: var(--primary);
-  padding: 20px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+    > .noButton {
+      width: 100%;
+      background: white;
+      border: 1px solid #ccc;
+      color: var(--primary);
+      padding: 20px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
 }

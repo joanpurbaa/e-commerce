@@ -7,138 +7,129 @@
 ion-content {
   --background: white;
   --overflow: hidden;
-  --padding-bottom: 100px; /* Beri ruang untuk footer */
+  --padding-bottom: 100px;
+
+  main {
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 120px;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .productImage {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url("/assets/product.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+
+      > svg {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        right: 10px;
+        top: 10px;
+        background: white;
+        padding: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+    }
+
+    .productTitle {
+      // kosong, biar gampang extend nanti
+    }
+
+    .productRating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      > span {
+        color: gray;
+      }
+    }
+
+    .productDescription {
+      color: #a0a0a0;
+    }
+
+    .productSizeWrapper {
+      display: flex;
+      gap: 5px;
+
+      > p {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
-main {
-  width: 100%;
-  padding: 20px;
-  color: var(--primary);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding-bottom: 120px; /* Extra space untuk footer */
-}
-
-.productImage {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background-image: url("/assets/product.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
-.productImage > svg {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  right: 10px;
-  top: 10px;
-  background: white;
-  padding: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
-.productDescription {
-  color: #a0a0a0;
-}
-
-.productRating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.productRating > span {
-  color: gray;
-}
-
-.productSizeWrapper {
-  display: flex;
-  gap: 5px;
-}
-
-.productSizeWrapper > p {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
-/* Footer Styling */
 ion-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-}
 
-ion-footer ion-toolbar {
-  --background: white;
-  --padding: 10px 0;
-}
+  ion-toolbar {
+    --background: white;
+    --padding: 10px 0;
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  gap: 20px;
-}
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      gap: 20px;
 
-.price-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+      .price-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
 
-.price-label {
-  color: gray;
-  font-size: 14px;
-  margin: 0;
-}
+        .price-label {
+          color: gray;
+          font-size: 14px;
+          margin: 0;
+        }
 
-.price-value {
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-}
+        .price-value {
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
 
-.add-to-cart-btn {
-  flex: 1;
-  margin: 0;
-  border-radius: 10px;
-  background: var(--primary);
-  color: white;
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: 12px 0;
-}
+      .add-to-cart-btn {
+        flex: 1;
+        margin: 0;
+        border-radius: 10px;
+        background: var(--primary);
+        color: white;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 12px 0;
 
-.add-to-cart-btn > span {
-  font-size: 1rem;
+        > span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }

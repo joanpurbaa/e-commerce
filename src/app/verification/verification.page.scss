@@ -9,20 +9,19 @@
   --overflow: hidden;
 }
 
-ion-header,
-ion-toolbar {
-  --background: #ffffff;
-  --color: #000000;
-  box-shadow: none;
-}
-
 ion-header {
   padding-top: 30px;
   background: white;
-}
+  --background: #ffffff;
+  --color: #000000;
+  box-shadow: none;
 
-ion-toolbar {
-  padding: 0 10px;
+  ion-toolbar {
+    padding: 0 10px;
+    --background: #ffffff;
+    --color: #000000;
+    box-shadow: none;
+  }
 }
 
 .title {
@@ -38,114 +37,110 @@ main {
   flex-direction: column;
   height: calc(100vh - 60px);
   overflow: hidden;
-}
 
-main form {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-.form-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
+    > p {
+      color: gray;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
 
-.input-section {
-  flex: 0 0 auto;
-}
+    .form-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 30px 0 20px;
 
-.button-section {
-  flex: 0 0 auto;
-}
+      .input-section {
+        flex: 0 0 auto;
 
-.button-section > button {
-  width: 100%;
-}
+        .code-input-container {
+          margin: 40px 0;
 
-main > form > p {
-  color: gray;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
+          .code-inputs {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            max-width: 280px;
+            margin: 0 auto;
 
-.code-input-container {
-  margin: 40px 0;
-}
+            .code-input {
+              width: 60px;
+              height: 60px;
+              border: 2px solid #e0e0e0;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 24px;
+              font-weight: 600;
+              color: var(--primary);
+              background: white;
+              outline: none;
+              transition: border-color 0.3s ease;
 
-.code-inputs {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  max-width: 280px;
-  margin: 0 auto;
-}
+              &:focus {
+                border-color: var(--primary);
+              }
+            }
+          }
+        }
 
-.code-input {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--primary);
-  background: white;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
+        .resend-section {
+          text-align: center;
+          margin-top: 30px;
 
-.code-input:focus {
-  border-color: var(--primary);
-}
+          .resend-text {
+            color: #666;
+            font-size: 14px;
 
-.resend-section {
-  text-align: center;
-  margin-top: 30px;
-}
+            .resend-link {
+              color: var(--primary);
+              font-weight: 500;
+              text-decoration: underline;
+              cursor: pointer;
 
-.resend-text {
-  color: #666;
-  font-size: 14px;
-}
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
 
-.resend-link {
-  color: var(--primary);
-  font-weight: 500;
-  text-decoration: underline;
-  cursor: pointer;
-}
+      .button-section {
+        flex: 0 0 auto;
 
-.resend-link:hover {
-  text-decoration: none;
-}
+        > button {
+          width: 100%;
+          height: 50px;
+          border: none;
+          border-radius: 10px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
 
-button {
-  height: 50px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+          &.button-enabled {
+            background: var(--primary);
+            color: white;
 
-.button-enabled {
-  background: var(--primary);
-  color: white;
-}
+            &:hover {
+              background: rgba(0, 0, 0, 0.8);
+            }
+          }
 
-.button-enabled:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.button-disabled {
-  background: #cccccc;
-  color: white;
-  cursor: not-allowed;
+          &.button-disabled {
+            background: #cccccc;
+            color: white;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
 }

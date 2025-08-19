@@ -11,41 +11,33 @@ ion-content {
 main {
   padding: 0 20px;
   color: var(--primary);
-}
 
-section {
-  margin-top: 20px;
-  padding-top: 0 20px 20px 20px;
-}
+  section {
+    margin-top: 20px;
+    padding-top: 0 20px 20px 20px;
 
-section:first-child {
-  margin-top: 0px;
-  padding: 20px 0 0 0;
-  border-top: 1px solid #ccc;
-  display: flex;
-  gap: 5px;
-}
+    &:first-child {
+      margin-top: 0px;
+      padding: 20px 0 0 0;
+      border-top: 1px solid #ccc;
+      display: flex;
+      gap: 5px;
 
-section:first-child > p:first-child {
-  color: white;
-  background: var(--primary);
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+      > p:first-child {
+        color: white;
+        background: var(--primary);
+        padding: 10px;
+        border-radius: 10px;
+      }
 
-section:first-child > p {
-  color: var(--primary);
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+      > p {
+        color: var(--primary);
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
 .searchWrapper {
@@ -53,11 +45,11 @@ section:first-child > p {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 10px;
-}
 
-.searchWrapper svg {
-  width: 30px;
-  height: 30px;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .searchBar {
@@ -68,51 +60,47 @@ section:first-child > p {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
 
-.searchBar svg {
-  color: #ccc;
-}
+  svg {
+    color: #ccc;
+  }
 
-.searchBar > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.searchBar > div > input {
-  background: transparent;
-  outline: none;
-  border: none;
+    > input {
+      background: transparent;
+      outline: none;
+      border: none;
+    }
+  }
 }
 
 .faqCard {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+
+  > div:first-child {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  > p {
+    margin-top: 10px;
+    color: #969696;
+  }
 }
 
-.faqCard > div:first-child {
-  display: flex;
-  justify-content: space-between;
-}
-
-.faqCard > p {
-  margin-top: 10px;
-  color: #969696;
-}
-
-section:nth-child(4) > div > svg,
-section:nth-child(5) > div > svg,
-section:nth-child(6) > div > svg,
-section:nth-child(7) > div > svg {
-  rotate: 180deg;
+section {
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6),
+  &:nth-child(7) {
+    > div > svg {
+      rotate: 180deg;
+    }
+  }
 }

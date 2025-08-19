@@ -6,136 +6,121 @@
 
 ion-content {
   --background: white;
-}
 
-form {
-  height: 100%;
-  color: var(--primary);
-  padding: 0 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  form {
+    height: 100%;
+    color: var(--primary);
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.wrapper > section {
-  border-top: 1px solid #ccc;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    .wrapper {
+      > section {
+        border-top: 1px solid #ccc;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-.wrapper > section:nth-child(1) > div:first-child {
-  display: flex;
-  justify-content: space-between;
-}
+        &:nth-child(1) {
+          > div:first-child {
+            display: flex;
+            justify-content: space-between;
+          }
 
-.wrapper > section:nth-child(1) > .addressWrapper {
-  padding: 10px;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+          > .addressWrapper {
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
 
-.wrapper > section:nth-child(1) > .addressWrapper > .address {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
+            .address {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 10px;
 
-.wrapper > section:nth-child(1) > div > div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+              div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
 
-.wrapper
-  > section:nth-child(1)
-  > .addressWrapper
-  > .address
-  > div
-  > p:last-child {
-  color: #a8a8a8;
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+                p:last-child {
+                  color: #a8a8a8;
+                  width: 250px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-.noRekening {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+    .noRekening {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
 
-.card-details {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
+      .card-info {
+        .card-details {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 15px;
 
-.visa-logo {
-  font-weight: bold;
-  font-size: 18px;
-  color: #1a1f71;
-  font-style: italic;
-  letter-spacing: 1px;
-  margin: 0;
-}
+          .visa-logo {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a1f71;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin: 0;
+          }
 
-.default-label {
-  background-color: #e8e8e8;
-  color: #666;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-}
+          .default-label {
+            background-color: #e8e8e8;
+            color: #666;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
 
-.addAddressButton {
-  background: transparent;
-  color: var(--primary);
-  font-size: 1rem;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+    .addAddressButton {
+      background: transparent;
+      color: var(--primary);
+      font-size: 1rem;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
 
-.checkoutButton {
-  margin-top: 20px;
-  background: var(--primary);
-  font-size: 1rem;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+    .checkoutButton {
+      margin-top: 20px;
+      background: var(--primary);
+      font-size: 1rem;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: 10px;
+    }
+  }
 }
