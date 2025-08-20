@@ -141,6 +141,11 @@ const routes: Routes = [
             (m) => m.CustomerServicePageModule
           ),
       },
+      {
+        path: 'profil',
+        loadChildren: () =>
+          import('./profil/profil.module').then((m) => m.ProfilPageModule),
+      },
     ],
   },
   {

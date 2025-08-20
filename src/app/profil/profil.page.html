@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <main>
+    <img src="/assets/defaultPfp.jpg" alt="">
+    <h3>{{ fullname || 'Joan' }}</h3>
+    <button id="open-modal">Edit profil</button>
+  </main>
+
+  <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement" [canDismiss]="true">
+    <ng-template>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Edit Profil</h2>
+          <ion-button (click)="modal.dismiss()" fill="clear" class="close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </div>
+        <form (ngSubmit)="updateProfile()">
+          <ul>
+            <li>
+              <label for="fullname">Fullname</label>
+              <input id="fullname" type="text" [(ngModel)]="fullname" name="fullname" placeholder="Enter your fullname">
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input id="email" type="email" [(ngModel)]="email" name="email" placeholder="Enter your email address">
+            </li>
+            <li>
+              <label for="password">Password</label>
+              <input id="password" type="text" [(ngModel)]="password" name="password"
+                placeholder="Enter your password">
+            </li>
+            <li>
+              <button type="submit" class="button-enabled">Edit</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>

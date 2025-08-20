@@ -40,6 +40,7 @@ export class SigninPage implements OnInit {
 
     if (user) {
       localStorage.setItem('currentUser', JSON.stringify(user));
+      localStorage.setItem('token', JSON.stringify(this.loginForm.value.email));
 
       this.router.navigate(['home']);
     } else {
