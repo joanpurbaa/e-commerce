@@ -4,6 +4,9 @@
       <h1 class="title">Create an account</h1>
       <p>Let's create your account.</p>
       <ul>
+        <li *ngIf="emailIsUsed" class="erroMessage">
+          <p>Email already used</p>
+        </li>
         <li>
           <label for="">Full name</label>
           <div class="inputWrapper"

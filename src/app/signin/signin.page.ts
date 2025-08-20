@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+interface CurrentUser {
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-signin',
@@ -8,25 +14,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   standalone: false,
 })
 export class SigninPage implements OnInit {
-  registerForm!: FormGroup;
+  loginForm!: FormGroup;
   filledInputStatus: boolean = false;
   showPassword: boolean = false;
+  currentUser: CurrentUser[] = [];
+  invalidCredential: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
 
   onSubmit() {
-    if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
+    const storedData = JSON.parse(localStorage.getItem('users') || '[]');
+
+    const user = storedData.find(
+      (data: any) =>
+        data.email === this.loginForm.value.email &&
+        data.password === this.loginForm.value.password
+    );
+
+    if (user) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+
+      this.router.navigate(['home']);
     } else {
-      console.log(this.registerForm.value);
-      console.log('data form tidak valid');
+      this.invalidCredential = true;
     }
   }
 

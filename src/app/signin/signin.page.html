@@ -1,16 +1,19 @@
 <ion-content [fullscreen]="true">
   <main>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" action="">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="">
       <h1 class="title">Login to your account</h1>
       <p>It's great to see you again.</p>
       <ul>
+        <li *ngIf="invalidCredential" class="erroMessage">
+          <p>Invalid email or password</p>
+        </li>
         <li>
           <label for="">Email</label>
           <div class="inputWrapper"
-            [ngStyle]="registerForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}"
-            [ngStyle]="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email'] ? {'border': '1px solid red'} : {'border': '1px solid #ccc'}">
+            [ngStyle]="loginForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}"
+            [ngStyle]="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email'] ? {'border': '1px solid red'} : {'border': '1px solid #ccc'}">
             <input formControlName="email" type="email" placeholder="Enter your email adress">
-            <svg *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']"
+            <svg *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-circle-alert-icon lucide-circle-alert">
@@ -18,7 +21,7 @@
               <line x1="12" x2="12" y1="8" y2="12" />
               <line x1="12" x2="12.01" y1="16" y2="16" />
             </svg>
-            <svg *ngIf="registerForm.valid" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            <svg *ngIf="loginForm.valid" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
               viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check">
               <circle cx="12" cy="12" r="10" />
@@ -26,13 +29,13 @@
             </svg>
           </div>
           <p class="emailError"
-            *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">Please enter
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']">Please enter
             valid email address</p>
         </li>
         <li>
           <label for="">Password</label>
           <div class="inputWrapper"
-            [ngStyle]="registerForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}">
+            [ngStyle]="loginForm.valid ? {'border': '1px solid green'} : {'border': '1px solid #ccc'}">
             <input formControlName="password" [type]="showPassword ? 'text' : 'password'"
               placeholder="Enter your password">
             <svg *ngIf="!showPassword" (click)="showPasswordStatus()" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -51,7 +54,7 @@
                 d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
               <circle cx="12" cy="12" r="3" />
             </svg>
-            <svg *ngIf="registerForm.valid" style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="24"
+            <svg *ngIf="loginForm.valid" style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="24"
               height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check">
               <circle cx="12" cy="12" r="10" />
@@ -62,7 +65,7 @@
           </p>
         </li>
         <li>
-          <button [disabled]="!registerForm.valid" [ngClass]="registerForm.valid ? 'button-enabled' : 'button-disabled'"
+          <button [disabled]="!loginForm.valid" [ngClass]="loginForm.valid ? 'button-enabled' : 'button-disabled'"
             type="submit">Login</button>
         </li>
         <li>

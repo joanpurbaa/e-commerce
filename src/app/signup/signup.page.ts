@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+interface Users {
+  fullname: string;
+  email: string;
+  password: string;
+}
+
+interface User {
+  user: Users[];
+}
 
 @Component({
   selector: 'app-signup',
@@ -11,8 +22,10 @@ export class SignupPage implements OnInit {
   registerForm!: FormGroup;
   filledInputStatus: boolean = false;
   showPassword: boolean = false;
+  users: User[] = [];
+  emailIsUsed: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -24,14 +37,32 @@ export class SignupPage implements OnInit {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
+      const storedData = JSON.parse(localStorage.getItem('users') || '[]');
+
+      const user = storedData.find(
+        (data: any) => data.email === this.registerForm.value.email
+      );
+
+      if (user) {
+        this.emailIsUsed = true;
+      } else {
+        const newUsers = Array.isArray(this.registerForm.value)
+          ? this.registerForm.value
+          : [this.registerForm.value];
+
+        this.users = [...newUsers, ...this.users];
+
+        localStorage.setItem('users', JSON.stringify(this.users));
+
+        this.router.navigate(['signin']);
+      }
     } else {
       console.log(this.registerForm.value);
       console.log('data form tidak valid');
     }
   }
 
-  showPasswordStatus(){
+  showPasswordStatus() {
     this.showPassword = !this.showPassword;
   }
 }
