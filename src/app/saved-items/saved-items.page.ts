@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saved-items.page.scss'],
   standalone: false,
 })
-export class SavedItemsPage {
+export class SavedItemsPage implements OnInit {
+  savedItem: any[] = [];
+
   constructor() {}
+
+  ngOnInit() {
+    this.loadSavedItem();
+  }
 
   onNotificationClick() {
     console.log(true);
   }
+
+  loadSavedItem() {
+    this.savedItem = JSON.parse(localStorage.getItem('saved') || '[]');
+  }
+
+
 }

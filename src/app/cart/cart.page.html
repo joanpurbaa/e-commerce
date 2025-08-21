@@ -8,7 +8,6 @@
             <p class="productName">{{ item.title }}</p>
             <p class="productSize">Qty: {{ item.quantity }}</p>
           </div>
-          <!-- Delete -->
           <svg (click)="removeFromCart(item.id)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             viewBox="0 0 24 24" fill="none" stroke="tomato" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" class="lucide lucide-trash2-icon">
@@ -25,7 +24,6 @@
             <p class="productPrice">$ {{ item.price * item.quantity }}</p>
           </div>
           <div>
-            <!-- Minus -->
             <div (click)="decreaseQty(item.id)">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -35,7 +33,6 @@
 
             <p>{{ item.quantity }}</p>
 
-            <!-- Plus -->
             <div (click)="increaseQty(item.id)">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +45,6 @@
       </div>
     </section>
 
-    <!-- Summary -->
     <div>
       <p>Sub-total</p>
       <p>$ {{ getSubTotal() }}</p>

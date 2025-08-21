@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage {
   product: any;
+  isSaved: boolean = false;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -20,6 +21,25 @@ export class DetailsPage {
       .then((data) => {
         this.product = data;
       });
+  }
+
+  toggleWishlist() {
+    let saved = JSON.parse(localStorage.getItem('saved') || '[]');
+
+    if (this.isSaved) {
+      saved = saved.filter((item: any) => item.id !== this.product.id);
+      this.isSaved = false;
+    } else {
+      saved.push(this.product);
+      this.isSaved = true;
+    }
+
+    localStorage.setItem('saved', JSON.stringify(saved));
+  }
+
+  checkSaved() {
+    let saved = JSON.parse(localStorage.getItem('saved') || '[]');
+    this.isSaved = saved.some((item: any) => item.id === this.product.id);
   }
 
   addToCart(product: any) {
