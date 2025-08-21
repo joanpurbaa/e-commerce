@@ -16,4 +16,9 @@ export class AccountPage implements OnInit {
   setLogoutPopup() {
     this.logoutPopup = !this.logoutPopup;
   }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
+  }
 }

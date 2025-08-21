@@ -21,6 +21,7 @@ main {
       > button {
         background: transparent;
         display: flex;
+        justify-content: start;
         align-items: center;
         gap: 10px;
         color: red;
@@ -38,19 +39,20 @@ main {
       }
     }
 
-    > div {
+    > button {
+      background: transparent;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 0;
+      color: var(--primary);
 
       > div {
         width: 100%;
         display: flex;
         align-items: center;
         gap: 10px;
-        color: var(--primary);
       }
     }
   }
