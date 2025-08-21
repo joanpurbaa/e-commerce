@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +8,17 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class DetailsPage {
-  constructor() {}
+  product: any;
 
-  onNotificationClick() {
-    console.log(true);
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.product = data;
+      });
   }
 }

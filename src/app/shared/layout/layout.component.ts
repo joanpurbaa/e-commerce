@@ -57,7 +57,7 @@ export class LayoutComponent implements OnInit {
       this.showBackButton = true;
       this.showRightIcon = true;
       this.rightIconName = 'notifications-outline';
-    } else if (currentUrl === '/details') {
+    } else if (currentUrl.startsWith('/details/')) {
       this.title = 'Details';
       this.showTopHeader = true;
       this.showBottomNav = false;
