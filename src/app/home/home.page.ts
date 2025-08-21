@@ -23,6 +23,9 @@ interface Product {
 })
 export class HomePage {
   products: Product[] = [];
+  allProducts: Product[] = [];
+  categories: string[] = [];
+  selectedCategory: string = 'All';
   searchQuery: string = '';
   presentingElement!: HTMLElement | null;
 
@@ -33,13 +36,33 @@ export class HomePage {
       .then((res) => res.json())
       .then((data) => {
         this.products = data.products;
+        this.allProducts = data.products;
+      });
+
+    fetch('https://dummyjson.com/products/categories')
+      .then((res) => res.json())
+      .then((data) => {
+        this.categories = ['All', ...data.map((c: any) => c.name)];
       });
 
     this.presentingElement = document.querySelector('.ion-page');
   }
 
+  filterByCategory(category: string) {
+    this.selectedCategory = category;
+    if (category === 'All') {
+      this.products = this.allProducts;
+    } else {
+      this.products = this.allProducts.filter(
+        (p) => p.category.toLowerCase() === category.toLowerCase()
+      );
+    }
+  }
+
   searchProducts() {
     if (!this.searchQuery.trim()) {
+      this.products = this.allProducts;
+
       return;
     }
 

@@ -41,12 +41,9 @@
       </ion-button>
     </section>
     <section class="categories">
-      <p>All</p>
-      <p>Tshirt</p>
-      <p>Jeans</p>
-      <p>Shoes</p>
-      <p>Cap</p>
-      <p>Tie</p>
+      <p *ngFor="let cat of categories" (click)="filterByCategory(cat)" [class.active]="selectedCategory === cat">
+        {{ cat }}
+      </p>
     </section>
     <section class="products">
       <div class="productWrapper" *ngFor="let product of products" (click)="goToDetails(product.id)">
