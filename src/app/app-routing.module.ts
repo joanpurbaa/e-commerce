@@ -5,6 +5,54 @@ import { LayoutComponent } from './shared/layout/layout.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/splash-screen',
+    pathMatch: 'full',
+  },
+  {
+    path: 'splash-screen',
+    loadChildren: () =>
+      import('./splash-screen/splash-screen.module').then(
+        (m) => m.SplashScreenPageModule
+      ),
+  },
+  {
+    path: 'landing',
+    loadChildren: () =>
+      import('./landing/landing.module').then((m) => m.LandingPageModule),
+  },
+  {
+    path: 'signin',
+    loadChildren: () =>
+      import('./signin/signin.module').then((m) => m.SigninPageModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./signup/signup.module').then((m) => m.SignupPageModule),
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () =>
+      import('./forgot-password/forgot-password.module').then(
+        (m) => m.ForgotPasswordPageModule
+      ),
+  },
+  {
+    path: 'verification',
+    loadChildren: () =>
+      import('./verification/verification.module').then(
+        (m) => m.VerificationPageModule
+      ),
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () =>
+      import('./reset-password/reset-password.module').then(
+        (m) => m.ResetPasswordPageModule
+      ),
+  },
+  {
+    path: '',
     component: LayoutComponent,
     children: [
       {
@@ -35,16 +83,6 @@ const routes: Routes = [
         path: 'details/:id',
         loadChildren: () =>
           import('./details/details.module').then((m) => m.DetailsPageModule),
-      },
-      {
-        path: 'reviews',
-        loadChildren: () =>
-          import('./reviews/reviews.module').then((m) => m.ReviewsPageModule),
-      },
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
       },
       {
         path: 'cart',
@@ -147,49 +185,6 @@ const routes: Routes = [
           import('./profil/profil.module').then((m) => m.ProfilPageModule),
       },
     ],
-  },
-  {
-    path: 'splash-screen',
-    loadChildren: () =>
-      import('./splash-screen/splash-screen.module').then(
-        (m) => m.SplashScreenPageModule
-      ),
-  },
-  {
-    path: 'landing',
-    loadChildren: () =>
-      import('./landing/landing.module').then((m) => m.LandingPageModule),
-  },
-  {
-    path: 'signup',
-    loadChildren: () =>
-      import('./signup/signup.module').then((m) => m.SignupPageModule),
-  },
-  {
-    path: 'signin',
-    loadChildren: () =>
-      import('./signin/signin.module').then((m) => m.SigninPageModule),
-  },
-  {
-    path: 'forgot-password',
-    loadChildren: () =>
-      import('./forgot-password/forgot-password.module').then(
-        (m) => m.ForgotPasswordPageModule
-      ),
-  },
-  {
-    path: 'verification',
-    loadChildren: () =>
-      import('./verification/verification.module').then(
-        (m) => m.VerificationPageModule
-      ),
-  },
-  {
-    path: 'reset-password',
-    loadChildren: () =>
-      import('./reset-password/reset-password.module').then(
-        (m) => m.ResetPasswordPageModule
-      ),
   },
 ];
 

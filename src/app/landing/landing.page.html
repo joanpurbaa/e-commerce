@@ -8,7 +8,7 @@
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <a [routerLink]="['/signup']">
+  <button (click)="submitButton()">
     <p>
       Get Started
     </p>
@@ -18,5 +18,5 @@
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
     </svg>
-  </a>
+  </button>
 </ion-footer>
